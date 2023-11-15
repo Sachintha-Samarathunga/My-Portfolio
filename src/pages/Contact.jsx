@@ -6,6 +6,7 @@ import { Loader } from "@react-three/drei";
 import Fox from "../models/Fox";
 import useAlert from "../hooks/useAlert";
 import Alert from "../components/Alert";
+import Plane from "../models/Plane";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -154,12 +155,7 @@ const Contact = () => {
             intensity={2}
           />
           <Suspense fallback={<Loader />}>
-            <Fox 
-              currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
-              rotation={[12.629, -0.6, 0]}
-              scale={[0.5, 0.5, 0.5]}
-            />
+            
           </Suspense>
         </Canvas>
       </div>
