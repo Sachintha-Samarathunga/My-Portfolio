@@ -68,4 +68,4 @@ const Fox = ({ currentAnimation, ...props }) => {
   );
 }
 
-export default Fox;
+export default Fox

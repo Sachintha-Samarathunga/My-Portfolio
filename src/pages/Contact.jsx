@@ -15,8 +15,8 @@ const Contact = () => {
   const [currentAnimation, setCurrentAnimation] = useState("idle");
   const { alert, showAlert, hideAlert } = useAlert();
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = ({ target: { name, value } }) => {
+    setForm({ ...form, [name]: value });
   };
   
   const handleFocus = () => setCurrentAnimation("walk");
@@ -154,8 +154,13 @@ const Contact = () => {
             penumbra={1}
             intensity={2}
           />
-          <Suspense fallback={<Loader />}>
-            
+          <Suspense>
+            <Fox
+              currentAnimation={currentAnimation}
+              position={[0.5, 0.35, 0]}
+              rotation={[12.629, -0.6, 0]}
+              scale={[0.5, 0.5, 0.5]}
+            />
           </Suspense>
         </Canvas>
       </div>
